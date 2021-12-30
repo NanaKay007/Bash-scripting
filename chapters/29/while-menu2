@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 # while-menu2: a menu driven system information program
 DELAY=3 # Number of seconds to display results
 while true; do

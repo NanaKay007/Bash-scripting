@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 # case-menu: a menu driven system information program
 clear
 echo "

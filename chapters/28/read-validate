@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 
 # read-validate: validate input
 invalid_input () {

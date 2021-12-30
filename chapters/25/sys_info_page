@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 
 # Program to output a system information page
 TITLE="System Information Report for $HOSTNAME"

@@ -1,0 +1,19 @@
+#!/opt/homebrew/bin/bash
+
+# longest-word: find the longest string in a file
+
+while [[ -n "$1" ]]; do
+    if [[ -r "$1" ]]; then
+        max_length=0
+        max_word=
+        for word in $(strings "$1"); do
+            len="$(echo -n "$word" | wc -c)"
+            if (( len > max_length )); then
+                max_word="$word"
+                max_length="$len"
+            fi
+        done
+        echo "$1: '$max_word' ($max_length characters) "
+    fi
+    shift
+done

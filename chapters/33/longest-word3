@@ -1,0 +1,19 @@
+#!/opt/homebrew/bin/bash
+
+# longest-word: find the longest string in a file
+
+# for defaults to reading positional parameters
+for param; do
+    if [[ -r "$param" ]]; then
+        max_length=0
+        max_word=
+        for word in $(strings "$param"); do
+            len="${#word}"
+            if (( len > max_length )); then
+                max_word="$word"
+                max_length="$len"
+            fi
+        done
+        echo "$param: '$max_word' ($max_length characters) "
+    fi
+done
