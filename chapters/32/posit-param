@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# posit-param: script to view command line params
+
+# You can actually access more than nine parameters using parameter expan- sion. To specify a number greater than nine, surround the number in braces as in ${10}, ${55}, ${211}, and so on.
+
+echo "
+Number of arguments: $#
+\$0=$0
+\$1=$1
+\$2=$2
+\$3=$3
+\$4=$4
+\$5 = $5
+\$6 = $6
+\$7 = $7
+\$8 = $8
+\$9 = $9
+"
