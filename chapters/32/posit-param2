@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 # posit-param2: script to display all arguments. run script with * as argument. * expands to list all files in cwd
 count=1
 while [[ $# -gt 0 ]]; do

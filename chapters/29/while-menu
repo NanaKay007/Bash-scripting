@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 # while-menu: a menu driven system information program 
 DELAY=3 # Number of seconds to display results
 while [[ "$REPLY" != 0 ]]; do

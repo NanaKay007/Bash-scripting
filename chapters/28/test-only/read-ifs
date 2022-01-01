@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 # read-ifs: read fields from a file
 FILE=/etc/passwd
 read -p "Enter a username > " user_name

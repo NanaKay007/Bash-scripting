@@ -1,0 +1,43 @@
+#!/opt/homebrew/bin/bash
+
+# array-2: Use arrays to tally file owners
+
+usage() {
+    echo "Usage: ${0##./} directory" >&2
+}
+
+if [[ ! -d "$1" ]]; then
+    usage
+    exit 1
+fi
+
+# declare array
+declare -A files file_owners group_owners
+
+for i in "${1%\/}"/*; do
+    stat=$(stat "$i")
+    file_owner=$(cut -w -f 5 <<<$stat)
+    group_owner=$(cut -w -f 6 <<<$stat)
+    files["$i"]="$file_owner $group_owner"
+    ((++file_owners[$file_owner]))
+    ((++group_owners[$group_owner]))
+done
+
+# print results
+for i in "${!files[@]}"; do
+    printf "%-45s      %-10s\n" "$i" "${files["$i"]}"
+done
+echo
+
+# list owners
+echo "File owners: "
+for j in "${!file_owners[@]}"; do
+    printf "%-10s:   %d\n" "$j" "${file_owners[$j]}"
+done
+echo
+
+# list group owners
+echo "File group owners: "
+for k in "${!group_owners[@]}"; do
+    printf "%-10s:   %d\n" "$k" "${group_owners[$k]}"
+done

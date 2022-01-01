@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 # file-info: simple file information program
 PROGNAME="$(basename "$0")"
 if [[ -e "$1" ]]; then

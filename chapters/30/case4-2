@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 
 # case4-2: test a character
 read -n 1 -p "Type a character > "
